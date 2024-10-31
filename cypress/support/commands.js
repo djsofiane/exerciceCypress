@@ -44,5 +44,6 @@ Cypress.Commands.add("userForm", (firstName, lastName, postalCode) => {
   cy.get('[data-test="postalCode"]')
     .type(postalCode)
     .should("have.value", postalCode);
+  cy.pause();
   cy.get('[data-test="continue"]').click();
 });

@@ -1,4 +1,7 @@
 /// <reference types="cypress" />
+
+import { faker } from "@faker-js/faker";
+
 describe("Achats de produits ", function () {
   it("achat complet de produit Cartons", function () {
     // Authentification
@@ -17,8 +20,10 @@ describe("Achats de produits ", function () {
     cy.get('[data-test="checkout"]').click();
 
     // Informations d'utilisateurs
-    cy.userForm("Nabil", "Barka", "92000");
-
+    let firstName = faker.person.firstName();
+    let lastName = faker.person.lastName();
+    let zipCode = faker.location.zipCode();
+    cy.userForm(firstName, lastName, zipCode);
     // Confirmation de commande
     cy.url().should("include", "/checkout-step-two.html");
     cy.get('[data-test="finish"]').click();

@@ -1,4 +1,6 @@
 /// <reference types="cypress" />
+import { faker } from "@faker-js/faker";
+
 describe("Autentification nominale", function () {
   it("connexion Ok", function () {
     cy.visit("https://practice.automationtesteracademy.com/");
