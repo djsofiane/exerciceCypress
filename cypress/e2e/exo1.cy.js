@@ -11,7 +11,6 @@ describe("Autentification nominale", function () {
     cy.get('[data-test="login-button"]').click();
     cy.url().should("include", "/inventory.html");
     cy.get('[data-test="inventory-item-name"]').should("be.visible");
-    c;
   });
 });
 
@@ -23,3 +22,5 @@ describe("Autentification non passant", function () {
     cy.get('[data-test="login-button"]').click();
   });
 });
+
+it("ajouter un produit au panier ", function () {});
